@@ -99,7 +99,7 @@ from Blinkit_data
 group by Item_Fat_Content
 Order by Sales desc;
 
----Which items have inconsistent sales across outlets?
+---12.Which items have inconsistent sales across outlets?
 select 
     Item_Identifier,
 	count(distinct Outlet_Identifier) as Outlets_Sold_In,
