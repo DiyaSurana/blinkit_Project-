@@ -88,7 +88,7 @@ where Price_Tier in ('Low', 'High')
 group by Price_Tier
 order by Price_Tier;
 
----What is the difference in sales between Low Fat and Regular items?
+**---What is the difference in sales between Low Fat and Regular items?**
 select 
     Item_Fat_Content,
 	count(*) as Total_Items_Sold,
@@ -99,7 +99,7 @@ from Blinkit_data
 group by Item_Fat_Content
 Order by Sales desc;
 
----Which items have inconsistent sales across outlets?
+**---Which items have inconsistent sales across outlets?**
 select 
     Item_Identifier,
 	count(distinct Outlet_Identifier) as Outlets_Sold_In,
@@ -109,11 +109,3 @@ from Blinkit_data
 group by Item_Identifier
 Having count(distinct Outlet_Identifier)>1
 order by Sales_Variance  desc;
-
-
-
-
-
-
-
-
